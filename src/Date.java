@@ -33,7 +33,7 @@ public class Date extends DateFormat {
         System.out.println("\n");
       }
 
-      System.out.println(holiday.get(i).getDate() + " => " + holiday.get(i).getDateName());
+      System.out.println(holiday.get(i).getNewDate() + " => " + holiday.get(i).getDateName());
     }
   }
 
@@ -65,8 +65,8 @@ public class Date extends DateFormat {
 
   String checkIfHoliday() {
     createHolidays();
-    for (int i = 0; i < holiday.size(); i+=2) {
-      if ((holiday.get(i).getDate()).equals(getNewDate())) {
+    for (int i = 0; i < holiday.size(); i++) {
+      if ((holiday.get(i).getNewDate()).equals(getNewDate())) {
         return "\nO feriado de " + holiday.get(i).getDateName() + " acontece no dia " + getNewDate();
       } 
     }

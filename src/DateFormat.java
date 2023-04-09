@@ -8,6 +8,4 @@ public class DateFormat implements IEveryDate {
   public void setNewDate(String newDate) {
     this.newDate = newDate;
   }
-
-  
 }

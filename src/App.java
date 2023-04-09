@@ -21,6 +21,7 @@ public class App {
           try {
             if (specificDate.checkIfValidDate()) {
               System.out.println(specificDate.checkIfHoliday());
+              return;
             }
             System.out.println("\nData inválida!");
             return;
