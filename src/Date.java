@@ -1,17 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Date {
-  private String newDate;
+public class Date extends DateFormat {
   private List<Holiday> holiday = new ArrayList<Holiday>();
 
+  public List<Holiday> getHoliday() {
+    return holiday;
+  }
 
   Date () {
 
   }
 
-  Date (String date) {
-    this.newDate = date;
+  Date (String newDate) {
+    setNewDate(newDate);
   }
 
   private void createHolidays() {
@@ -36,7 +38,7 @@ public class Date {
   }
 
   boolean checkIfValidDate() {
-    String date = this.newDate;
+    String date = getNewDate();
 
     boolean charCount = date.length() == 10;
     boolean separator = date.indexOf("/") == 2 && date.lastIndexOf("/") == 5;
@@ -64,10 +66,10 @@ public class Date {
   String checkIfHoliday() {
     createHolidays();
     for (int i = 0; i < holiday.size(); i+=2) {
-      if ((holiday.get(i).getDate()).equals(this.newDate)) {
-        return "\nO feriado de " + holiday.get(i).getDateName() + " acontece no dia " + newDate;
+      if ((holiday.get(i).getDate()).equals(getNewDate())) {
+        return "\nO feriado de " + holiday.get(i).getDateName() + " acontece no dia " + getNewDate();
       } 
     }
-    return "\nNão tem nenhum feriado no dia " + newDate;
+    return "\nNão tem nenhum feriado no dia " + getNewDate();
   }
 }

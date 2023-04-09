@@ -1,14 +1,14 @@
-public class Holiday {
-  private String date;
+public class Holiday extends DateFormat {
+  private String newDate;
   private String dateName;
 
-  Holiday (String date, String dateName) {
-    this.date = date;
+  Holiday (String newDate, String dateName) {
+    this.newDate = newDate;
     this.dateName = dateName;
   }
 
   public String getDate() {
-    return date;
+    return newDate;
   }
 
   public String getDateName() {
